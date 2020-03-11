@@ -46,3 +46,19 @@ function addTodoItem() {
     }
 
 }
+
+    function boxChecked(event) {
+        const element = event.target;
+        if (element.type === "checkbox") {
+            element.parentNode.style.textDecoration = "line-through";
+            todoList = JSON.parse(localStorage.getItem("todoList"));
+            todoList[element.id.split('-')[1] -1].checked = element.checked.toString();
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+        }
+
+    }
+
+    function addToLocalStorage(){
+
+        
+    }
